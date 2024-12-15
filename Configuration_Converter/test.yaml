@@ -1,0 +1,2 @@
+"Ошибка в синтаксисе:\nNo terminal matches '5' in the current parser context, at line\
+  \ 1 col 12\n\nset x = $+ 50 0$\n           ^\nExpected one of: \n\t* NAME\n"
