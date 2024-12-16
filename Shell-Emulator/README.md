@@ -53,16 +53,16 @@ pytest test.py -v
 
 # Тесты
 ## ls
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_ls.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_cd.png)
 ## cd
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_cd.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_cd.png)
 ## exit
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_exit.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_exit.png)
 ## uname
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_uname.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_uname.png)
 ## rev
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_rev.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_rev.png)
 ## touch
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_touch.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_touch.png)
 ## Общие тесты через pytest
-![](https://github.com/YG5126/MIREA/tree/main/Shell-Emulator/Test/Test_common.png)
+![](https://github.com/YG5126/MIREA/blob/main/Shell-Emulator/Test/Test_common.png)
