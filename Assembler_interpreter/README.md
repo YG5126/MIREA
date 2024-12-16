@@ -74,76 +74,106 @@ UNARY_MINUS 5 6 6
 # Сборка и запуск проекта
 1. Загрузить репозиторий на компьютер
 ```
-git clone https://github.com/n1kpavlov/MIREA_assembler_and_interpreter
+git clone https://github.com/YG5126/MIREA/tree/main/Assembler_interpreter
 ```
 2. Прейдите в директорию репозитория
 ```
-cd MIREA_assembler_and_interpreter
+cd Assembler_interpreter
 ```
 3. Запустить assembler.py с указанием исполняемой программы, бинарного файла вывода и лог-файла
 ```
-py assembler.py <исполняемая_программа.asm> <бинарный_файл_вывода.bin> -l <лог-файл.xml>
+python assembler.py input.asm output.bin -l log.yaml
 ```
 4. Запустить interpreter.py с указанием бинарного файла данных, файла с результатами и диапазона памяти
 ```
-py interpreter.py <бинарный_файл_данных.bin> <результат.xml> -lb <левая_граница_диапазона> -rb <правая граница диапазона>
+python assembler.py input.asm output.bin -l log.yaml
 ```
-# Примерs работы программы
+# Примеры работы программы
 ### Задание для тестовой программы
 Выполнить поэлементно операцию умножение над вектором длины 6 и числом 128. Результат записать в новый вектор. 
 ### Тестовая программа
 ```
-LOAD_CONSTANT 36 0 2
-LOAD_CONSTANT 36 1 3
-LOAD_CONSTANT 36 2 4
-LOAD_CONSTANT 36 3 5
-LOAD_CONSTANT 36 4 6
-LOAD_CONSTANT 36 5 7
-LOAD_CONSTANT 36 10 128
-MUL 32 20 0 10
-MUL 32 21 1 10
-MUL 32 22 2 10
-MUL 32 23 3 10
-MUL 32 24 4 10
-MUL 32 25 5 10
+LOAD_CONSTANT 1 0 42
+LOAD_CONSTANT 1 1 100
+LOAD_CONSTANT 1 2 50
+
+UNARY_MINUS 5 0 3
+UNARY_MINUS 5 1 4
+
+WRITE_MEMORY 3 0 5
+WRITE_MEMORY 3 1 6
+
+READ_MEMORY 7 0 10 7
+READ_MEMORY 7 1 20 6
 ```
 ### Данные, записанные в лог-файл
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<log>
-	<LOAD_CONSTANT A="36" B="0" C="2">248000000000</LOAD_CONSTANT>
-	<LOAD_CONSTANT A="36" B="1" C="3">a4c000000000</LOAD_CONSTANT>
-	<LOAD_CONSTANT A="36" B="2" C="4">240101000000</LOAD_CONSTANT>
-	<LOAD_CONSTANT A="36" B="3" C="5">a44101000000</LOAD_CONSTANT>
-	<LOAD_CONSTANT A="36" B="4" C="6">248201000000</LOAD_CONSTANT>
-	<LOAD_CONSTANT A="36" B="5" C="7">a4c201000000</LOAD_CONSTANT>
-	<LOAD_CONSTANT A="36" B="10" C="128">240520000000</LOAD_CONSTANT>
-	<MUL A="32" B="20" C="0" D="10">200a40010000</MUL>
-	<MUL A="32" B="21" C="1" D="10">a04a40010000</MUL>
-	<MUL A="32" B="22" C="2" D="10">208b40010000</MUL>
-	<MUL A="32" B="23" C="3" D="10">a0cb40010000</MUL>
-	<MUL A="32" B="24" C="4" D="10">200c41010000</MUL>
-	<MUL A="32" B="25" C="5" D="10">a04c41010000</MUL>
-</log>
+- A: 1
+  B: 0
+  C: 42
+  hex: 810a00
+  instruction: LOAD_CONSTANT
+- A: 1
+  B: 1
+  C: 100
+  hex: 091900
+  instruction: LOAD_CONSTANT
+- A: 1
+  B: 2
+  C: 50
+  hex: 910c00
+  instruction: LOAD_CONSTANT
+- A: 5
+  B: 0
+  C: 3
+  hex: c50000
+  instruction: UNARY_MINUS
+- A: 5
+  B: 1
+  C: 4
+  hex: 0d0100
+  instruction: UNARY_MINUS
+- A: 3
+  B: 0
+  C: 5
+  hex: '430100'
+  instruction: WRITE_MEMORY
+- A: 3
+  B: 1
+  C: 6
+  hex: 8b0100
+  instruction: WRITE_MEMORY
+- A: 7
+  B: 0
+  C: 10
+  D: 7
+  hex: '877200'
+  instruction: READ_MEMORY
+- A: 7
+  B: 1
+  C: 20
+  D: 6
+  hex: 0f6500
+  instruction: READ_MEMORY
 ```
 ### Данные, записанные в файл-результат
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<result>
-	<register address="0">2</register>
-	<register address="1">3</register>
-	<register address="2">4</register>
-	<register address="3">5</register>
-	<register address="4">6</register>
-	<register address="5">7</register>
-	<register address="10">128</register>
-	<register address="20">256</register>
-	<register address="21">384</register>
-	<register address="22">512</register>
-	<register address="23">640</register>
-	<register address="24">768</register>
-	<register address="25">896</register>
-</result>
+- address: 0
+  value: 42
+- address: 1
+  value: 100
+- address: 2
+  value: 50
+- address: 3
+  value: -42
+- address: 4
+  value: -100
+- address: 5
+  value: 42
+- address: 6
+  value: 120
+- address: 7
+  value: 52
 ```
 # Результаты тестирования
 ## Ассемблер
