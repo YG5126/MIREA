@@ -29,7 +29,7 @@
 2. Скачать утилиту PlantUML (https://plantuml.com/ru/download)
 3. Клонировать репозиторий
 ```
-git clone https://github.com/YG5126/Dependency_Visualizer
+git clone https://github.com/YG5126/MIREA/tree/main/Dependency_Visualizer
 ```
 4. Прейти в директорию репозитория
 ```
@@ -41,7 +41,7 @@ py main.py plantuml-1.2024.8.jar package.json https://registry.npmjs.org
 ```
 # Результат рыботы программы
 
-![](https://github.com/YG5126/Dependency_Visualizer/blob/main/Test/dependency_graph.png)
+![](https://github.com/YG5126/MIREA/blob/main/Dependency_Visualizer/Test/dependency_graph.png)
 
 # Особенности реализации
 
@@ -58,4 +58,4 @@ py main.py plantuml-1.2024.8.jar package.json https://registry.npmjs.org
  - Установленная библиотека PlantUML
 # Общие тесты
 
-![](https://github.com/YG5126/Dependency_Visualizer/blob/main/Test/Common%20tests.png)
+![](https://github.com/YG5126/MIREA/blob/main/Dependency_Visualizer/Test/Common%20tests.png)
