@@ -67,7 +67,7 @@ $+ имя 1$
 # Сборка и запуск проекта
 1. Загрузка репозитория на компьютер
 ```
-git clone https://github.com/YG5126/Configuration_Converter
+git clone https://github.com/YG5126/MIREA/tree/main/Configuration_Converter
 ```
 2. Преход в директорию репозитория
 ```
@@ -166,4 +166,4 @@ ExperimentConfig:
   notes: Precise measurements required
 ```
 # Общие тесты
-![image](https://github.com/YG5126/Configuration_Converter/blob/main/Common_test.png)
+![image](https://github.com/YG5126/MIREA/blob/main/Configuration_Converter/Common_test.png)
