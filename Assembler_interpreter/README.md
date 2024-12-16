@@ -251,4 +251,4 @@ def test_interpreter_methods():
     assert os.path.exists('output.yaml')
 ```
 ## Результаты тестирования
-![image](https://github.com/user-attachments/assets/12f47803-d419-4a91-bfa9-e5fdb387e9c1)
+![image](https://github.com/YG5126/MIREA/blob/main/Assembler_interpreter/common_test.png)
