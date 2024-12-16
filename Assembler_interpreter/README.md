@@ -177,43 +177,30 @@ READ_MEMORY 7 1 20 6
 ```
 # Результаты тестирования
 ## Ассемблер
-### Тест загрузки константы
+### Тест базовой функции импорта
 ```
-def test_load_const(self):
-        filename = 'test_file.asm'
-        binary_file = 'test_bin.bin'
-        log_file = 'test_log.xml'
-
-        with open(filename, 'w') as f:
-            f.write("LOAD_CONSTANT 36 32 12")
-
-        assembler = Assembler(filename, binary_file, log_file)
-        assembler.assemble()
-
-        os.remove(filename)
-        os.remove(binary_file)
-        os.remove(log_file)
-
-        self.assertEqual(assembler.bytes[0].hex(), "241003000000")
+def test_assembler_class_import():
+    assert Assembler is not None
+    
+    test_assembler = Assembler(
+        path_to_code='input.asm', 
+        path_to_binary_file='output.bin', 
+        path_to_log='log.yaml'
+    )
+    assert test_assembler is not None
 ```
-### Тест чтения из памяти
+### Тест декодирования команд
 ```
-def test_read_memory(self):
-        filename = 'test_file.asm'
-        binary_file = 'test_bin.bin'
-        log_file = 'test_log.xml'
+def test_assembler_methods():
+    test_assembler = Assembler(
+        path_to_code='input.asm', 
+        path_to_binary_file='output.bin', 
+        path_to_log='log.yaml'
+    )
 
-        with open(filename, 'w') as f:
-            f.write("READ_MEMORY 58 26 198")
-
-        assembler = Assembler(filename, binary_file, log_file)
-        assembler.assemble()
-
-        os.remove(filename)
-        os.remove(binary_file)
-        os.remove(log_file)
-
-        self.assertEqual(assembler.bytes[0].hex(), "3a8d31000000")
+    encoded = test_assembler.encode_instruction(1, 0, 42)
+    assert encoded is not None
+    assert len(encoded) == 3
 ```
 ### Тест записи в память
 ```
